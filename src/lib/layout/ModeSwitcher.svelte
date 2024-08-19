@@ -4,7 +4,7 @@
 	import LayoutButton from "$lib/layout/LayoutButton.svelte";
 
 	type Props = {
-		class: string | null | undefined;
+		class?: string | null | undefined;
 	};
 
 	let { class: className }: Props = $props();

@@ -5,7 +5,7 @@
 	type Props = {
 		children?: Snippet;
 		onclick?: () => void;
-		class: string | null | undefined;
+		class?: string | null | undefined;
 	};
 	let { children, onclick, class: className }: Props = $props();
 </script>
