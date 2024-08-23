@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { ComponentType } from "svelte";
 	import { type Icon, Smile, Tag, Truck, X } from "lucide-svelte";
+	import Switch from "$lib/components/Switch.svelte";
 
 	type Option = {
 		name: string;
@@ -82,21 +83,15 @@
 						<span class="text-xs font-light text-neutral-500">{option.description}</span>
 					</div>
 					<!-- Switch -->
-					<label class="relative ml-auto inline-block h-8 w-14">
-						<input
-							type="checkbox"
-							bind:checked={option.isChecked}
-							onchange={e => {
-								if (!e.currentTarget.checked) return;
-								updateSelections(i);
-							}}
-							class="peer size-0 opacity-0"
-						/>
-						<!-- Background & Thumb (::before) -->
-						<span
-							class="absolute inset-0 cursor-pointer rounded-full bg-neutral-500 duration-300 before:absolute before:bottom-0.5 before:left-0.5 before:size-7 before:rounded-full before:bg-gradient-to-b before:from-white before:from-25% before:to-white/65 before:duration-300 before:ease-out before:content-[''] peer-checked:bg-[--color] before:peer-checked:translate-x-6"
-						></span>
-					</label>
+					<Switch
+						bind:checked={option.isChecked}
+						onchange={e => {
+							if (!e.currentTarget.checked) return;
+							updateSelections(i);
+						}}
+						class="scale-110"
+						toggleClass="peer-checked:bg-[--color]"
+					/>
 				</div>
 			{/each}
 		</div>
