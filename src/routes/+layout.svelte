@@ -2,7 +2,7 @@
 	import "../app.css";
 	import type { Snippet } from "svelte";
 	import { goto } from "$app/navigation";
-	import { page } from "$app/stores";
+	import { page } from "$app/state";
 	import { ArrowLeft } from "lucide-svelte";
 	import { ModeWatcher } from "mode-watcher";
 	import ModeSwitcher from "$lib/layout/ModeSwitcher.svelte";
@@ -10,8 +10,7 @@
 
 	let { children }: { children?: Snippet } = $props();
 
-	let path = $state("/");
-	page.subscribe(value => (path = value.url.pathname));
+	let path = $derived(page.url.pathname);
 </script>
 
 <svelte:head>
@@ -20,7 +19,7 @@
 
 <ModeWatcher />
 
-{#if $page.url.pathname !== "/"}
+{#if page.url.pathname !== "/"}
 	<LayoutButton class="fixed left-4 top-4" onclick={() => goto("/")}>
 		<ArrowLeft />
 	</LayoutButton>
