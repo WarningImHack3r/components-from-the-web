@@ -114,8 +114,10 @@
 	</section>
 	<!-- List part -->
 	<section
-		class="bg-neutral-100/50 transition-transform duration-500 dark:bg-neutral-700/15"
-		class:translate-x-full={toggled}
+		class={[
+			"bg-neutral-100/50 transition-transform duration-500 dark:bg-neutral-700/15",
+			toggled && "translate-x-full"
+		]}
 	>
 		<!-- List -->
 		<ul class="flex flex-col gap-3">
@@ -123,7 +125,7 @@
 				{@const [tzHour, tzMinutes] = offsetToTimes(person.timezoneOffset)}
 				<!-- People cell -->
 				<li
-					class="w-72 rounded-xl p-3 outline-1 outline-neutral-300 hover:bg-neutral-200/30 hover:shadow-inner hover:outline dark:outline-neutral-700 hover:dark:bg-neutral-700/30"
+					class="w-72 rounded-xl p-3 outline-1 outline-neutral-300 hover:bg-neutral-200/30 hover:shadow-inner hover:outline dark:outline-neutral-700 dark:hover:bg-neutral-700/30"
 					onmouseenter={() => (hoveredPerson = person)}
 					onmouseleave={() => (hoveredPerson = undefined)}
 				>
@@ -136,10 +138,12 @@
 									{#if person === hoveredPerson}
 										<!-- TODO: animate transitions vertically (broken in Svelte 5??) -->
 										<span
-											class:text-red-500={tzHour < 0}
-											class:text-green-500={tzHour > 0 || tzMinutes > 0}
-											class:text-neutral-600={tzHour === 0 && tzMinutes === 0}
-											class:dark:text-neutral-400={tzHour === 0 && tzMinutes === 0}
+											class={{
+												"text-red-500": tzHour < 0,
+												"text-green-500": tzHour > 0 || tzMinutes > 0,
+												"text-neutral-600": tzHour === 0 && tzMinutes === 0,
+												"dark:text-neutral-400": tzHour === 0 && tzMinutes === 0
+											}}
 										>
 											{#if tzHour === 0 && tzMinutes === 0}
 												No change

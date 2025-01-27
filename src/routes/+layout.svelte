@@ -20,11 +20,11 @@
 <ModeWatcher />
 
 {#if page.url.pathname !== "/"}
-	<LayoutButton class="fixed left-4 top-4" onclick={() => goto("/")}>
+	<LayoutButton class="fixed top-4 left-4" onclick={() => goto("/")}>
 		<ArrowLeft />
 	</LayoutButton>
 {/if}
-<ModeSwitcher class="fixed right-4 top-4" />
+<ModeSwitcher class="fixed top-4 right-4" />
 
 <main class="flex h-screen items-center justify-center">
 	{@render children?.()}

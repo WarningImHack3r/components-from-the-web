@@ -45,15 +45,15 @@
 
 <div class="relative overflow-clip rounded-3xl">
 	<!-- Right shadows -->
-	<div class="absolute -right-12 bottom-1/3 left-3/4 top-1/4 rounded-full bg-green-500/15"></div>
-	<div class="absolute -right-12 bottom-1/4 left-3/4 top-1/2 rounded-full bg-blue-500/15"></div>
-	<div class="absolute -right-12 bottom-0 left-3/4 top-3/4 rounded-full bg-violet-500/15"></div>
+	<div class="absolute top-1/4 -right-12 bottom-1/3 left-3/4 rounded-full bg-green-500/15"></div>
+	<div class="absolute top-1/2 -right-12 bottom-1/4 left-3/4 rounded-full bg-blue-500/15"></div>
+	<div class="absolute top-3/4 -right-12 bottom-0 left-3/4 rounded-full bg-violet-500/15"></div>
 	<!-- Left shadows -->
-	<div class="absolute -left-12 bottom-1/3 top-1/4 w-24 rounded-full bg-green-500/15"></div>
-	<div class="absolute -left-12 bottom-1/4 top-1/2 w-24 rounded-full bg-blue-500/15"></div>
-	<div class="absolute -left-12 bottom-8 top-3/4 w-24 rounded-full bg-violet-500/15"></div>
+	<div class="absolute top-1/4 bottom-1/3 -left-12 w-24 rounded-full bg-green-500/15"></div>
+	<div class="absolute top-1/2 bottom-1/4 -left-12 w-24 rounded-full bg-blue-500/15"></div>
+	<div class="absolute top-3/4 bottom-8 -left-12 w-24 rounded-full bg-violet-500/15"></div>
 	<!-- Top shadow -->
-	<div class="absolute -top-8 bottom-3/4 left-1/4 right-1/4 rounded-full bg-white/5"></div>
+	<div class="absolute -top-8 right-1/4 bottom-3/4 left-1/4 rounded-full bg-white/5"></div>
 	<!-- Card -->
 	<section
 		class="rounded-3xl border-[0.5px] border-neutral-600 bg-[rgba(89,_89,_89,_0.05)] p-6 shadow-[0_4px_30px_rgba(0,_0,_0,_0.1)] backdrop-blur-lg"
@@ -74,7 +74,7 @@
 					<div class="rounded-xl bg-neutral-700 p-2.5 shadow-lg shadow-neutral-900/75">
 						<OptionIcon
 							class="size-6 text-white duration-300 dark:text-inherit {option.isChecked
-								? '!text-[--color]'
+								? 'text-(--color)!'
 								: ''}"
 						/>
 					</div>
@@ -90,7 +90,7 @@
 							updateSelections(i);
 						}}
 						class="scale-110"
-						toggleClass="peer-checked:bg-[--color]"
+						toggleClass="peer-checked:bg-(--color)"
 					/>
 				</div>
 			{/each}

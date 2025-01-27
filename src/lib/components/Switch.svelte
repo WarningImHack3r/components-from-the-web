@@ -16,7 +16,7 @@
 	<!-- Background & Thumb (::before) -->
 	<span
 		class={twMerge(
-			"absolute inset-0 cursor-pointer rounded-full bg-neutral-500 duration-150 before:absolute before:bottom-0.5 before:left-0.5 before:size-6 before:rounded-full before:bg-gradient-to-b before:from-white before:from-25% before:to-white/65 before:duration-150 before:ease-out before:content-[''] peer-checked:bg-neutral-400 before:peer-checked:translate-x-5",
+			"absolute inset-0 cursor-pointer rounded-full bg-neutral-500 duration-150 peer-checked:bg-neutral-400 before:absolute before:bottom-0.5 before:left-0.5 before:size-6 before:rounded-full before:bg-linear-to-b before:from-white before:from-25% before:to-white/65 before:duration-150 before:ease-out before:content-[''] peer-checked:before:translate-x-5",
 			toggleClass
 		)}
 	></span>
