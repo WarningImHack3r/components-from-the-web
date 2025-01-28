@@ -14,7 +14,7 @@
 	type="button"
 	{onclick}
 	class={twMerge(
-		"aspect-square rounded-xl border-[0.5px] bg-neutral-200 p-2 shadow-xl shadow-black/50 duration-200 hover:scale-110 dark:bg-neutral-700",
+		"aspect-square cursor-pointer rounded-xl border-[0.5px] bg-neutral-200 p-2 shadow-xl duration-200 hover:scale-110 dark:bg-neutral-700",
 		className
 	)}
 >
